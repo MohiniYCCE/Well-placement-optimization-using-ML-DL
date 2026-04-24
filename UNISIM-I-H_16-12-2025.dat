@@ -1,0 +1,641 @@
+RESULTS SIMULATOR GEM 202110
+TITLE2 'History Matching'
+**********************************************************************************
+**                                      UNISIM-I-H                              **
+**                                                                              **
+**                     Simulation Model Generated at t2                         **
+**                                                                              **
+**                     Available Data: 11 years of production history (t2)      **
+**********************************************************************************
+*****************************************************************************
+** I/O Control Section                                                       
+*****************************************************************************
+TITLE1 'UNISIM-I Simulation Model in t2'
+**------------------------------------------------------------------------
+TITLE3 'UNISIM GROUP'
+INUNIT SI
+OUTPRN WELL BRIEF
+OUTPRN GRID DENG DENO 
+OUTPRN RES NONE
+WPRN WELL 1
+WPRN GRID 1
+WPRN ITER NONE
+OUTSRF WELL LAYER ALL
+OUTSRF GRID DENO PRES SG SO SW TEMP Z 'CO2' Z 'c7+' 
+WSRF WELL TIME
+WSRF GRID 1
+*XDR *ON
+RESULTS SUBMODEL_REFSS 7
+** ***************************************************************************
+** Definition of fundamental corner point grid
+** ***************************************************************************
+GRID CORNER 81 58 20
+
+*INCLUDE 'mst2u_corners.inc'
+XOFFSET           0.0000
+YOFFSET           0.0000
+ROTATION           0.0000
+AXES-DIRECTIONS 1.0 1.0 1.0
+*INCLUDE 'mst2u_null.inc'
+*INCLUDE 'mst2u_pinchoutarray.inc'
+*INCLUDE 'mst2u_sectorarray.inc'
+*INCLUDE 'mst2u_transfc.inc'
+*INCLUDE 'im01.inc'
+*****************************************************************************
+*****************************************************************************
+PRPOR 322.0
+*****************************************************************************
+CPOR 53.0E-6
+*****************************************************************************
+PVCUTOFF 80
+END-GRID
+**The following is the fluid component 
+**property data in GEM format.
+**The unit system and fluid compositions should
+**be specified in the I/O control section.
+**The units and compositions specified in WinProp
+**are included here as comments for informational purposes.
+** PVT UNITS CONSISTENT WITH *INUNIT *FIELD
+**COMPOSITION  *PRIMARY
+**      0.00000000   0.00245002   0.00338003   0.04067041   0.03106031
+**      0.04876049   0.02088021   0.03582036   0.02448024   0.03067031
+**      0.05512055   0.70670707
+**COMPOSITION  *SECOND
+**      0.00000000   1.00000000   0.00000000   0.00000000   0.00000000
+**      0.00000000   0.00000000   0.00000000   0.00000000   0.00000000
+**      0.00000000   0.00000000
+** Model and number of components
+MODEL PR
+NC 12 12
+COMPNAME 'H2S' 'CO2' 'N2' 'CH4' 'C2H6' 'C3H8' 'IC4' 'NC4' 'IC5' 'NC5' 'FC6' 'c7+' 
+** The Hydrocarbon component flag values:  1 - Hydro-Carbon, 0 - non Hydro-Carbon
+**
+** The read-in HC-HC BIN values will be overwritten by the internal GEM calculated
+** values for these HC-HC pairs, if the original *HCFLAG values are used.
+** This is fine if there is only 1 HC-HC group defined in the original WinProp
+** data set. Otherwise, all-zero *HCFLAG will be output here in order to use the
+** full read-in BIN values.
+** The original WinProp HC-flags:
+** *HCFLAG     4    3    0    1    1    1    1    1    1    1    1    1
+HCFLAG
+0 0 0 1 1 1 1 1 1 1 1 1 
+TRES 80.5056 
+PVC3 1.20000000E+00
+VISCOR HZYT
+MIXVC 1.0000000E+00
+VISCOEFF
+1.0230000E-01 2.3364000E-02 5.8533000E-02 -4.0758000E-02 9.3324000E-03 
+MW
+3.4080000E+01 4.4010000E+01 2.8013000E+01 1.6043000E+01 3.0070000E+01 4.4097000E+01 5.8124000E+01 5.8124000E+01 7.2151000E+01 7.2151000E+01 8.6000000E+01 2.2794000E+02 
+AC
+0.1 0.225 0.04 0.008 0.098 0.152 0.176 0.193 0.227 0.251 0.27504 0.660073 
+PCRIT
+8.8200000E+01 7.2800000E+01 3.3500000E+01 4.5400000E+01 4.8200000E+01 4.1900000E+01 3.6000000E+01 3.7500000E+01 3.3400000E+01 3.3300000E+01 3.2460000E+01 1.6395953E+01 
+VCRIT
+9.8500000E-02 9.4000000E-02 8.9500000E-02 9.9000000E-02 1.4800000E-01 2.0300000E-01 2.6300000E-01 2.5500000E-01 3.0600000E-01 3.0400000E-01 3.4400000E-01 8.9345665E-01 
+TCRIT
+3.7320000E+02 3.0420000E+02 1.2620000E+02 1.9060000E+02 3.0540000E+02 3.6980000E+02 4.0810000E+02 4.2520000E+02 4.6040000E+02 4.6960000E+02 5.0750000E+02 7.7052537E+02 
+PCHOR
+80.1 78 41 77 108 150.3 181.5 189.9 225 231.5 250.109 610.542 
+SG
+0.801 0.818 0.809 0.3 0.356 0.507 0.563 0.584 0.625 0.631 0.69 0.8615 
+TB
+-60.35 -78.45 -195.75 -161.45 -88.65 -42.05 -11.85 -0.45 27.85 36.05 63.85 311.131 
+OMEGA
+0.457236 0.457236 0.457236 0.457236 0.457236 0.457236 0.457236 0.457236 0.457236 0.457236 0.457236 0.457236 
+OMEGB
+0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 0.0777961 
+VSHIFT
+0 0 0 0 0 0 0 0 0 0 0 0 
+HEATING_VALUES
+0 0 0 890773 1.55986e+06 2.22106e+06 2.86083e+06 2.86083e+06 3.5383e+06 3.5383e+06 4.19481e+06 0 
+VISVC
+9.8500000E-02 9.4000000E-02 8.9500000E-02 9.9000000E-02 1.4800000E-01 2.0300000E-01 2.6300000E-01 2.5500000E-01 3.0600000E-01 3.0400000E-01 3.4400000E-01 8.9345665E-01 
+BIN
+1.3500000E-01 
+1.3000000E-01 0.0000000E+00 
+7.0000000E-02 1.0500000E-01 2.5000000E-02 
+8.5000000E-02 1.3000000E-01 1.0000000E-02 2.6890022E-03 
+8.0000000E-02 1.2500000E-01 9.0000000E-02 8.5370405E-03 1.6620489E-03 
+7.5000000E-02 1.2000000E-01 9.5000000E-02 1.5715316E-02 5.4857876E-03 1.1165976E-03 
+7.5000000E-02 1.1500000E-01 9.5000000E-02 1.4748531E-02 4.9143360E-03 8.6625350E-04 1.5903506E-05 
+7.0000000E-02 1.1500000E-01 1.0000000E-01 2.0878892E-02 8.7338646E-03 2.8007353E-03 3.8207590E-04 5.5378054E-04 
+7.0000000E-02 1.1500000E-01 1.1000000E-01 2.0640839E-02 8.5779330E-03 2.7121325E-03 3.4971119E-04 5.1467786E-04 7.1665797E-07 
+5.0000000E-02 1.1500000E-01 1.1000000E-01 2.5345101E-02 1.1747825E-02 4.6198099E-03 1.2003051E-03 1.4920539E-03 2.2833006E-04 2.5462307E-04 
+0.0000000E+00 0.0000000E+00 0.0000000E+00 7.5886018E-02 5.1701354E-02 3.5585308E-02 2.4451909E-02 2.5677735E-02 1.8854782E-02 1.9082820E-02 1.5005777E-02 
+
+ENTHCOEF
+-2.3279000E-01 2.3744800E-01 -2.3234000E-05 3.8812000E-08 -1.1328700E-11 1.1484100E-15 
+9.6880000E-02 1.5884300E-01 -3.3712000E-05 1.4810500E-07 -9.6620300E-11 2.0738320E-14 
+-6.5665000E-01 2.5409800E-01 -1.6624000E-05 1.5302000E-08 -3.0995000E-12 1.5167000E-16 
+-2.8385700E+00 5.3828500E-01 -2.1140900E-04 3.3927600E-07 -1.1643220E-10 1.3896120E-14 
+-1.4220000E-02 2.6461200E-01 -2.4568000E-05 2.9140200E-07 -1.2810330E-10 1.8134820E-14 
+6.8715000E-01 1.6030400E-01 1.2608400E-04 1.8143000E-07 -9.1891300E-11 1.3548500E-14 
+1.4595600E+00 9.9070000E-02 2.3873600E-04 9.1593000E-08 -5.9405000E-11 9.0964500E-15 
+7.2281400E+00 9.9687000E-02 2.6654800E-04 5.4073000E-08 -4.2926900E-11 6.6958000E-15 
+1.7694120E+01 1.5946000E-02 3.8244900E-04 -2.7557000E-08 -1.4303500E-11 2.9567700E-15 
+9.0420900E+00 1.1182900E-01 2.2851500E-04 8.6331000E-08 -5.4464900E-11 8.1845000E-15 
+0.0000000E+00 -1.6543463E-02 4.1169069E-04 -5.7742757E-08 0.0000000E+00 0.0000000E+00 
+0.0000000E+00 -3.5531057E-02 4.1288415E-04 -6.1271748E-08 0.0000000E+00 0.0000000E+00 
+
+DENW 255046
+DENWS 259156
+CW 1.00215e-06
+VISW 0.3
+SOLUBILITY HENRY
+HENRY-MOD1-CO2
+HENRY-MOD1-H2S
+BIN-TDEP-CO2
+BIN-TDEP-H2S
+********************************************************************************
+                **  WinProp GENERATED Gas-/Oil-H2O K-VALUE TABLE FOR GEM:
+********************************************************************************
+ 
+** PVT UNITS CONSISTENT WITH *INUNIT *FIELD
+ 
+ **  Table Parameters: Pressure (    psia) from 1.470000E+01 to 3.914700E+03 with increment 1.000000E+02
+ **                    Temperature (deg F) from 7.000000E+01 to 4.600000E+02 with increment 1.000000E+01
+ **                    Global Compositions :
+ **                                H2S       3.014268E-02
+ **                                CO2       2.735269E-03
+ **                                N2        4.400170E-04
+ **                                CH4       2.260766E-01
+ **                                C2H6      4.987561E-02
+ **                                C3H8      8.447931E-02
+ **                                IC4       3.544696E-02
+ **                                NC4       1.531051E-02
+ **                                IC5       2.483574E-02
+ **                                NC5       3.504014E-02
+ **                                FC6       2.408232E-02
+ **                                c7p       4.715348E-01
+ 
+*GASWATKV
+ 
+ *KVTABLIM     1.470000E+01    3.914700E+03    7.000000E+01    4.600000E+02     ** low/high pressure; low/high temperature
+ 
+*AQUEOUS-DENSITY  *LINEAR
+** ***************************************************************************************************************************** 
+**$ Rock-Fluid Property Section
+** *****************************************************************************************************************************
+ROCKFLUID
+HYS_MODEL 3PWAGL
+RPT 1
+**        Sw       krw      krow      Pcow
+SWT
+         0.17      0.00      0.58      0.54
+         0.20      0.00      0.51      0.35
+         0.25      0.00      0.41      0.19
+         0.30      0.00      0.32      0.12
+         0.35      0.00      0.24      0.08
+         0.40      0.01      0.18      0.05
+         0.45      0.02      0.13      0.04
+         0.50      0.04      0.09      0.03
+         0.55      0.06      0.05      0.02
+         0.60      0.10      0.03      0.02
+         0.65      0.15      0.02      0.01
+         0.70      0.21      0.01      0.01
+         0.75      0.28      0.00      0.01
+         0.79      0.36      0.00      0.01
+         0.82      0.42      0.00      0.01
+**        Sg       krg      krog
+SGT
+          0.0     0.000      0.58
+        0.180     0.002     0.387
+        0.200     0.003     0.309
+        0.250     0.006     0.203
+        0.300     0.010     0.143
+        0.350     0.017     0.102
+        0.400     0.026     0.072
+        0.450     0.037     0.050
+        0.500     0.052     0.034
+        0.550     0.070     0.021
+        0.600     0.093     0.014
+        0.650     0.119     0.006
+        0.700     0.150     0.000
+ALPHAKRG 1
+HYSKRG
+*****************************************************************************
+** *****************************************************************************************************************************
+**$ Initial Conditions Section                                              
+INITIAL
+
+**  USE VERTICAL EQUILIBRIUM CALCULATION. 
+VERTICAL BLOCK_CENTER WATER_OIL
+
+
+DATUMDEPTH 3100.0 INITIAL
+ZGLOBALC 'C2H6' CON    0.0310603
+ZGLOBALC 'C3H8' CON    0.0487605
+ZGLOBALC 'CH4' CON    0.0406704
+ZGLOBALC 'CO2' CON   0.00245002
+ZGLOBALC 'FC6' CON    0.0551206
+ZGLOBALC 'H2S' CON            0
+ZGLOBALC 'IC4' CON    0.0208802
+ZGLOBALC 'IC5' CON    0.0244802
+ZGLOBALC 'N2' CON   0.00338003
+ZGLOBALC 'NC4' CON    0.0358204
+ZGLOBALC 'NC5' CON    0.0306703
+ZGLOBALC 'c7+' CON     0.706707
+
+NREGIONS 2
+
+REFPRES 
+  32067.75  32067.75
+
+REFDEPTH 
+  3000.0  3000.0
+
+DWOC 
+  3100.0  3174.0
+*****************************************************************************
+** *****************************************************************************************************************************
+**$ Numerical Control Section
+** *****************************************************************************************************************************
+NUMERICAL
+MAXSTEPS 100000
+
+** *****************************************************************************************************************************
+**$ Wells and Recurrent Section
+** *****************************************************************************************************************************
+
+RUN
+DATE 2025 1  1.00000
+*DTWELL  1.0
+** **$
+** **$
+GROUP 'Plataforma' ATTACHTO 'Field'
+GROUP 'Injecao' ATTACHTO 'Plataforma'
+GROUP 'Producao' ATTACHTO 'Plataforma'
+** **$
+** **$
+WELL  'NA1A'
+PRODUCER 'NA1A'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**          rad  geofac  wfrac  skin
+GEOMETRY  K  0.156  0.37  1.0  0.0  
+      PERF       GEO  'NA1A'
+** UBA                ff          Status  Connection  
+    38 36 1          1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    38 36 2          1.0  OPEN    FLOW-TO  1
+    38 36 3          1.0  OPEN    FLOW-TO  2
+    38 36 6          1.0  OPEN    FLOW-TO  3
+    38 36 7          1.0  OPEN    FLOW-TO  4
+    38 36 8          1.0  OPEN    FLOW-TO  5
+    38 36 9          1.0  OPEN    FLOW-TO  6
+    38 36 10         1.0  OPEN    FLOW-TO  7
+    38 36 11         1.0  OPEN    FLOW-TO  8
+    38 36 12         1.0  OPEN    FLOW-TO  9
+    38 36 13         1.0  OPEN    FLOW-TO  10
+    38 36 15         1.0  OPEN    FLOW-TO  11
+    38 36 16         1.0  OPEN    FLOW-TO  12
+    38 36 17         1.0  OPEN    FLOW-TO  13
+    38 36 18         1.0  OPEN    FLOW-TO  14
+    38 36 19         1.0  OPEN    FLOW-TO  15
+SHUTIN 'NA1A'
+** **$
+** **$
+WELL  'NA2'
+PRODUCER 'NA2'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA       ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  K  0.156  0.37  1.0  0.0  
+      PERF       GEO  'NA2'
+** UBA                ff          Status  Connection  
+    21 36 1          1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    21 36 2          1.0  OPEN    FLOW-TO  1
+    21 36 3          1.0  OPEN    FLOW-TO  2
+    21 36 6          1.0  OPEN    FLOW-TO  3
+    21 36 7          1.0  OPEN    FLOW-TO  4
+    21 36 8          1.0  OPEN    FLOW-TO  5
+    21 36 9          1.0  OPEN    FLOW-TO  6
+    21 36 10         1.0  OPEN    FLOW-TO  7
+    21 36 11         1.0  OPEN    FLOW-TO  8
+    21 36 12         1.0  OPEN    FLOW-TO  9
+SHUTIN 'NA2'
+** **$
+** **$
+WELL  'NA3D'
+PRODUCER 'NA3D'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA       ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  K  0.156  0.37  1.0  0.0  
+      PERF       GEO  'NA3D'
+** UBA                ff          Status  Connection  
+    44 43 1          1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    44 43 2          1.0  OPEN    FLOW-TO  1
+    44 43 3          1.0  OPEN    FLOW-TO  2
+    44 43 6          1.0  OPEN    FLOW-TO  3
+    44 43 7          1.0  OPEN    FLOW-TO  4
+    44 43 8          1.0  OPEN    FLOW-TO  5
+    44 43 9          1.0  OPEN    FLOW-TO  6
+    44 43 10         1.0  OPEN    FLOW-TO  7
+    44 43 11         1.0  OPEN    FLOW-TO  8
+SHUTIN 'NA3D'
+** **$
+** **$
+WELL  'RJS19'
+PRODUCER 'RJS19'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA       ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  K  0.156  0.37  1.0  0.0  
+      PERF       GEO  'RJS19'
+** UBA                ff          Status  Connection  
+    31 27 1          1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    31 27 2          1.0  OPEN    FLOW-TO  1
+    31 27 3          1.0  OPEN    FLOW-TO  2
+    31 27 6          1.0  OPEN    FLOW-TO  3
+    31 27 7          1.0  OPEN    FLOW-TO  4
+    31 27 8          1.0  OPEN    FLOW-TO  5
+    31 27 9          1.0  OPEN    FLOW-TO  6
+    31 27 10         1.0  OPEN    FLOW-TO  7
+    31 27 11         1.0  OPEN    FLOW-TO  8
+    31 27 12         1.0  OPEN    FLOW-TO  9
+    31 27 13         1.0  OPEN    FLOW-TO  10
+    31 27 15         1.0  OPEN    FLOW-TO  11
+    31 27 16         1.0  OPEN    FLOW-TO  12
+    31 27 17         1.0  OPEN    FLOW-TO  13
+    31 27 18         1.0  OPEN    FLOW-TO  14
+    31 27 19         1.0  OPEN    FLOW-TO  15
+SHUTIN 'RJS19'
+** **$
+** **$
+
+
+********************************************************************* Exploitation Strategy t2 *****************************************************************************************
+** **$
+** **$
+******************************************* PRODUCERS ******************************************
+** **$
+** **$
+WELL  'PROD005'
+PRODUCER 'PROD005'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD005'
+** UBA               ff          Status  Connection  
+    33 21 3         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    33 20 3         1.0  OPEN    FLOW-TO  1
+    33 19 3         1.0  OPEN    FLOW-TO  2
+    33 18 3         1.0  OPEN    FLOW-TO  3
+    33 17 3         1.0  OPEN    FLOW-TO  4
+    33 16 3         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD005'
+** **$
+** **$
+WELL  'PROD008'
+PRODUCER 'PROD008'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD008'
+** UBA               ff          Status  Connection  
+    19 32 1         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    19 31 1         1.0  OPEN    FLOW-TO  1
+    19 30 1         1.0  OPEN    FLOW-TO  2
+    19 29 1         1.0  OPEN    FLOW-TO  3
+    19 28 1         1.0  OPEN    FLOW-TO  4
+    19 27 1         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD008'
+** **$
+** **$
+WELL  'PROD009'
+PRODUCER 'PROD009'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD009'
+** UBA               ff          Status  Connection  
+    15 42 7         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    15 41 7         1.0  OPEN    FLOW-TO  1
+    15 40 7         1.0  OPEN    FLOW-TO  2
+    15 39 7         1.0  OPEN    FLOW-TO  3
+    15 38 7         1.0  OPEN    FLOW-TO  4
+    15 37 7         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD009'
+** **$
+** **$
+WELL  'PROD010'
+PRODUCER 'PROD010'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD010'
+** UBA               ff          Status  Connection  
+    36 44 1         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    36 43 1         1.0  OPEN    FLOW-TO  1
+    36 42 1         1.0  OPEN    FLOW-TO  2
+    36 41 1         1.0  OPEN    FLOW-TO  3
+    36 40 1         1.0  OPEN    FLOW-TO  4
+    36 39 1         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD010'
+** **$
+** **$
+WELL  'PROD012'
+PRODUCER 'PROD012'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD012'
+** UBA               ff          Status  Connection  
+    46 24 1         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    46 23 1         1.0  OPEN    FLOW-TO  1
+    46 22 1         1.0  OPEN    FLOW-TO  2
+    46 21 1         1.0  OPEN    FLOW-TO  3
+    46 20 1         1.0  OPEN    FLOW-TO  4
+    46 19 1         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD012'
+** **$
+** **$
+WELL  'PROD014'
+PRODUCER 'PROD014'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD014'
+** UBA               ff          Status  Connection  
+    50 20 1         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    50 19 1         1.0  OPEN    FLOW-TO  1
+    50 18 1         1.0  OPEN    FLOW-TO  2
+    50 17 1         1.0  OPEN    FLOW-TO  3
+    50 16 1         1.0  OPEN    FLOW-TO  4
+    50 15 1         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD014'
+** **$
+** **$
+WELL  'PROD021'
+PRODUCER 'PROD021'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD021'
+** UBA               ff          Status  Connection  
+    27 43 1         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    27 42 1         1.0  OPEN    FLOW-TO  1
+    27 41 1         1.0  OPEN    FLOW-TO  2
+    27 40 1         1.0  OPEN    FLOW-TO  3
+    27 39 1         1.0  OPEN    FLOW-TO  4
+    27 38 1         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD021'
+** **$
+** **$
+WELL  'PROD023A'
+PRODUCER 'PROD023A'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD023A'
+** UBA               ff          Status  Connection  
+    65 25 8         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    65 24 8         1.0  OPEN    FLOW-TO  1
+    65 23 8         1.0  OPEN    FLOW-TO  2
+    65 22 8         1.0  OPEN    FLOW-TO  3
+    65 21 8         1.0  OPEN    FLOW-TO  4
+    65 20 8         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD023A'
+** **$
+** **$
+WELL  'PROD024A'
+PRODUCER 'PROD024A'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD024A'
+** UBA               ff          Status  Connection  
+    61 37 2         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    61 36 2         1.0  OPEN    FLOW-TO  1
+    61 35 2         1.0  OPEN    FLOW-TO  2
+    61 34 2         1.0  OPEN    FLOW-TO  3
+    61 33 2         1.0  OPEN    FLOW-TO  4
+    61 32 2         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD024A'
+** **$
+** **$
+WELL  'PROD025A'
+PRODUCER 'PROD025A'
+OPERATE  MAX  STL  3000.0  CONT
+OPERATE  MIN  BHP  36.0  CONT
+**$ UBA      ff  Status  Connection
+**          rad  geofac  wfrac  skin
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'PROD025A'
+** UBA               ff          Status  Connection  
+    57 25 3         1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    57 24 3         1.0  OPEN    FLOW-TO  1
+    57 23 3         1.0  OPEN    FLOW-TO  2
+    57 22 3         1.0  OPEN    FLOW-TO  3
+    57 21 3         1.0  OPEN    FLOW-TO  4
+    57 20 3         1.0  OPEN    FLOW-TO  5
+SHUTIN 'PROD025A'
+** **$
+** **$
+
+WELL  'INJ_GEO_1'
+INJECTOR 'INJ_GEO_1'
+INCOMP SOLVENT  0.0  1.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+OPERATE  MAX  BHP  450.0  CONT
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'INJ_GEO_1'
+    35 31 1         1.0  OPEN    FLOW-FROM  'SURFACE'  REFLAYER
+    35 31 2         1.0  OPEN    FLOW-FROM  1
+    35 31 3         1.0  OPEN    FLOW-FROM  2   
+SHUTIN 'INJ_GEO_1'
+** **$
+
+WELL  'INJ_GEO_2'
+INJECTOR 'INJ_GEO_2'
+INCOMP SOLVENT  0.0  1.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+OPERATE  MAX  BHP  450.0  CONT
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'INJ_GEO_2'
+    27 27 1         1.0  OPEN    FLOW-FROM  'SURFACE'  REFLAYER
+    27 27 2         1.0  OPEN    FLOW-FROM  1
+    27 27 3         1.0  OPEN    FLOW-FROM  2
+SHUTIN 'INJ_GEO_2'
+** **$
+
+WELL  'INJ_GEO_3'
+INJECTOR 'INJ_GEO_3'
+INCOMP SOLVENT  0.0  1.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+OPERATE  MAX  BHP  450.0  CONT
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'INJ_GEO_3'
+    36 41 1         1.0  OPEN    FLOW-FROM  'SURFACE'  REFLAYER
+    36 41 2         1.0  OPEN    FLOW-FROM  1
+    36 41 3         1.0  OPEN    FLOW-FROM  2
+SHUTIN 'INJ_GEO_3'
+** **$
+
+WELL  'INJ_GEO_4'
+INJECTOR 'INJ_GEO_4'
+INCOMP SOLVENT  0.0  1.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+OPERATE  MAX  BHP  450.0  CONT
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'INJ_GEO_4'
+    17 35 1         1.0  OPEN    FLOW-FROM  'SURFACE'  REFLAYER
+    17 35 2         1.0  OPEN    FLOW-FROM  1  
+SHUTIN 'INJ_GEO_4'
+** **$
+
+WELL  'INJ_GEO_5'
+INJECTOR 'INJ_GEO_5'
+INCOMP SOLVENT  0.0  1.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+OPERATE  MAX  BHP  450.0  CONT
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'INJ_GEO_5'
+    39 32 2         1.0  OPEN    FLOW-FROM  'SURFACE'  REFLAYER
+    40 32 2         1.0  OPEN    FLOW-FROM  1
+    41 32 2         1.0  OPEN    FLOW-FROM  2
+    42 32 2         1.0  OPEN    FLOW-FROM  3
+    43 32 2         1.0  OPEN    FLOW-FROM  4
+SHUTIN 'INJ_GEO_5'
+** **$
+
+WELL  'INJ_GEO_6'
+INJECTOR 'INJ_GEO_6'
+INCOMP SOLVENT  0.0  1.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+OPERATE  MAX  BHP  450.0  CONT
+GEOMETRY  J  0.0762  0.37  1.0  0.0  
+      PERF       GEO  'INJ_GEO_6'
+    61 26 3         1.0  OPEN    FLOW-FROM  'SURFACE'  REFLAYER
+    61 27 3         1.0  OPEN    FLOW-FROM  1
+    61 28 3         1.0  OPEN    FLOW-FROM  2
+    61 29 3         1.0  OPEN    FLOW-FROM  3
+    61 30 3         1.0  OPEN    FLOW-FROM  4
+    61 31 3         1.0  OPEN    FLOW-FROM  5
+SHUTIN 'INJ_GEO_6'
+** **$
+
+
+
+DATE 2026 1  1.00000
+DATE 2027 1  1.00000
+DATE 2028 1  1.00000
+DATE 2029 1  1.00000
+************************************************************* END OF STRATEGY DEFINITION ************************************************************************
+
